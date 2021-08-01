@@ -1,0 +1,55 @@
+<div class="sign-up">
+  <section>
+    <div class="block no-padding  gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="inner2">
+              <div class="inner-title2">
+                <h3><%= t ".register" %></h3>
+                <span><%= t ".intro" %></span>
+              </div>
+              <div class="page-breacrumbs">
+                <ul class="breadcrumbs">
+                  <li><%= link_to t(".home"), root_path %></li>
+                  <li><%= link_to t(".register"), new_account_path %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="block remove-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="account-popup-area signup-popup-box static">
+              <div class="account-popup">
+                <h3><%= t ".sign_up" %></h3>
+                <%= form_for @account do |f| %>
+                  <%= render "shared/error_messages", object: f.object %>
+                  <div class="cfield">
+                    <%= f.text_field :email, placeholder: t(".placeholder.email") %>
+                  </div>
+                  <div class="cfield">
+                    <%= f.password_field :password, placeholder: t(".placeholder.password") %>
+                  </div>
+                  <div class="cfield">
+                    <%= f.password_field :password_confirmation, placeholder: t(".placeholder.password_confirmation") %>
+                  </div>
+                  <div class="cfield">
+                    <%= f.select :role, @roles.collect { |role| [role[:name], role[:value]] } %>
+                  </div>
+                  <%= f.submit t(".submit_text") %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

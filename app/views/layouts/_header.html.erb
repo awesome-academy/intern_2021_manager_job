@@ -1,53 +1,51 @@
-<header class="stick-top forsticky">
+<header class="gradient">
   <div class="menu-sec">
     <div class="container">
       <div class="logo">
         <%= link_to image_tag(Settings.image.logo), root_path %>
-      </div><!-- End Logo -->
+      </div><!-- Logo -->
       <div class="btn-extars">
-        <%= link_to "javascript:void(0)", :class => "post-job-btn" do %>
-          <i class="fas fa-plus"></i>
-          <%= t ".post" %>
+        <%= link_to "#", class: "post-job-btn" do %>
+          <i class="fa fa-plus"></i><%= t ".post" %>
         <% end %>
         <ul class="account-btns">
-          <li class="signup-popup">
-            <%= link_to "javascript:void(0)" do %>
-              <i class="fas fa-key"></i>
-              <%= t ".signup" %>
-            <% end %>
-          </li>
-          <li class="signin-popup">
-            <%= link_to "javascript:void(0)" do %>
-              <i class="fas fa-key"></i>
-              <%= t ".login" %>
-            <% end %>
-          </li>
+          <% if logged_in? %>
+            <li class="signup-popup">
+              <%= link_to t(".profile"), current_owner %>
+            </li>
+            <li class="signup-popup">
+              <%= link_to t(".logout"), logout_path, method: :delete %>
+            </li>
+          <% else %>
+            <li class="signup-popup">
+              <%= link_to new_account_path do %>
+                <i class="fa fa-key"></i> <%= t ".signup" %>
+              <% end %>
+            </li>
+            <li class="signin-popup">
+              <%= link_to login_path do %>
+                <i class="fa fa-external-link-square"></i> <%= t ".login" %>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
-      </div><!-- End Btn Extras -->
+      </div><!-- Btn Extras -->
       <nav>
         <ul>
-          <li class="menu-item">
-            <%= link_to t(".home") %>
-          </li>
-          <li class="menu-item">
-            <%= link_to t(".about") %>
-          </li>
-          <li class="menu-item">
-            <%= link_to t(".contact") %>
+          <li class="menu-item-has-children">
+            <%= link_to t(".home"), root_path %>
           </li>
           <li class="menu-item-has-children">
-            <%= link_to t(".language") %>
-            <ul>
-              <li>
-                <%= link_to t(".english"), locale: :en %>
-              </li>
-              <li>
-                <%= link_to t(".vietnamese"), locale: :vi %>
-              </li>
-            </ul>
+            <%= link_to t(".catogeries"), "#" %>
           </li>
+          <li class="menu-item-has-children">
+            <%= link_to t(".about"), "#" %>
+          </>
+          <li class="menu-item-has-children">
+            <%= link_to t(".contact"), "#" %>
+          </>
         </ul>
-      </nav><!-- End Menus -->
+      </nav><!-- Menus -->
     </div>
   </div>
 </header>

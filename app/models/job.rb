@@ -1,4 +1,7 @@
 class Job < ApplicationRecord
+  JOB_PARAMS = %i(name quantity salary description
+                  requirement benefit status expire_at).freeze
+
   belongs_to :company
   has_many :user_apply_jobs, dependent: :destroy
   has_many :users, through: :user_apply_jobs

@@ -10,6 +10,8 @@ vi:
       post: "Đăng bài"
       signup: "Đăng ký"
       login: "Đăng nhập"
+      logout: "Logout"
+      profile: "Profile"
     footer:
       address: "Collin Street West, Victor 8007, Australia."
       phone: "+1 246-345-0695"
@@ -34,10 +36,55 @@ vi:
       role_asking: "Bạn là người tìm việc hay nhà tuyển dụng?"
       employer: "Nhà tuyển dụng"
       candidate: "Người tìm việc"
+    error_messages:
+      show_error_number: "The form contains %{error_number} error"
   partial:
     search_basic:
       intro: "Đây là cách dễ nhất để bạn tìm việc"
       small_intro: "Tìm việc, cơ hội nghề nghiệp dễ dàng"
       browse_job_by: "Tìm việc bằng:"
       filter: "Bộ lọc"
-
+  accounts:
+    new:
+      register: "Register"
+      intro: "Keep up to date with the latest news"
+      home: "Home"
+      pages: "Pages"
+      sign_up: "Sign up"
+      user: "User"
+      company: "Company"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      placeholder:
+        email: "Enter your email"
+        password: "Enter your password"
+        password_confirmation: "Enter password confirmation"
+    create:
+      success: "Your account has been created"
+      failure: "Create account fail"
+      invalid_role: "Invalid account role"
+  companies:
+  users:
+  sessions:
+    new:
+      login: "Log in"
+      intro: "Keep up to date with the latest news"
+      home: "Home"
+      pages: "Pages"
+      submit_text: "Log in"
+      remember: "Remember me on this computer"
+      placeholder:
+        email: "Enter your email"
+        password: "Enter your password"
+    login:
+      success: "Log in successfully"
+      failure: "Log in fail"
+  jobs:
+    not_found: "Job not found"
+    create:
+      success: "Job has been created"
+      failure: "Create job fail"
+    update:
+      success: "Job has been updated"
+      failure: "Update job fail"

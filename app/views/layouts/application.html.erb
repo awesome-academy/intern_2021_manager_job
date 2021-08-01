@@ -8,7 +8,11 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
   </head>
   <body>
-    <%= yield %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <div class="theme-layout" id="scrollup">
+      <%= render partial: "layouts/header" %>
+      <%= yield %>
+      <%= render partial: "layouts/footer" %>
+      <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    </div>
   </body>
 </html>
