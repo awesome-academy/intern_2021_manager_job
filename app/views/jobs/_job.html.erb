@@ -1,0 +1,23 @@
+<div class="job-listing">
+  <div class="job-title-sec">
+    <div class="c-logo">
+      <%= link_to image_tag(Settings.image.company_logo), root_path %>
+    </div>
+    <h3><a href="#" title="">
+      <%= job.name %>
+    </a></h3>
+    <span>
+      <%= job.salary %> $
+    </span>
+  </div>
+  <span class="job-lctn"><i class="fa fa-map-marker"></i>
+  </span>
+  <span class="fav-job"><i class="fa fa-heart-o"></i></span>
+  <span class="job-is fl">
+    <% if @current_account&.user&.apply? job_id %>
+      <%= t ".applied" %>
+    <% else %>
+      <%= link_to t(".apply_job"), new_user_apply_job_path(job_id: job_id) %>
+    <% end %>
+  </span>
+</div>

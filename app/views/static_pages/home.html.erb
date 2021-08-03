@@ -24,6 +24,16 @@
               <h2>
                 <%= t ".recent_job" %>
               </h2>
+              <span>
+                <%= t ".lead_employers" %>
+              </span>
+            </div>
+            <div class="job-listings-sec">
+              <% @jobs.each do |job| %>
+                <%= render job, job_id: job.id %>
+              <% end %>
+            </div>
+
             </div>
           </div>
         </div>

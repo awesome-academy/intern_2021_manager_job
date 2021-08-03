@@ -1,4 +1,11 @@
 vi:
+  controller:
+    job_not_found: "Không tìm thấy việc làm"
+    applied: "Đã ứng tuyển!"
+    profile_updated: "Đã cập nhật profile!"
+    profile_update_failed: "Cập nhật profile thất bại"
+    provide_info_success: "Cung cấp thông tin thành công"
+    no_permission: "Bạn không có quyền truy cập trang web này!"
   layouts:
     header:
       language: "Ngôn ngữ"
@@ -10,9 +17,9 @@ vi:
       post: "Đăng bài"
       signup: "Đăng ký"
       login: "Đăng nhập"
-      logout: "Logout"
-      profile: "Profile"
-      categories: "Job Categories"
+      logout: "Đăng xuất"
+      profile: "Hồ Sơ"
+      categories: "Danh mục công việc"
     footer:
       address: "Collin Street West, Victor 8007, Australia."
       phone: "+1 246-345-0695"
@@ -31,6 +38,7 @@ vi:
     home:
       popular_cate: "Danh mục phổ biến"
       recent_job: "Công việc gần đây"
+      lead_employers: "Giúp nhà tuyển dụng tìm kiếm ứng viên tài năng."
   shared:
     login:
       user_login: "Đăng nhập"
@@ -38,19 +46,28 @@ vi:
       employer: "Nhà tuyển dụng"
       candidate: "Người tìm việc"
     error_messages:
-      show_error_number: "The form contains %{error_number} error"
+      show_error_number: "Biểu mẫu có chứa %{error_number} error"
     signup_form:
-      submit_text: "Sign up"
+      submit_text: "Đăng kí"
       placeholder:
-        email: "Enter your email"
-        password: "Enter your password"
-        password_confirmation: "Enter password confirmation"
+        email: "Nhập email"
+        password: "Nhập mật khẩu"
+        password_confirmation: "Nhập lại mật khẩu"
     login_form:
-      submit_text: "Log in"
-      remember: "Remember me on this computer"
+      submit_text: "Đăng nhập"
+      remember: "Ghi nhơ đăng nhập"
       placeholder:
-        email: "Enter your email"
-        password: "Enter your password"
+        email: "Nhập email"
+        password: "Nhập mật khẩu"
+    infor_form:
+      placeholder:
+        name: "Tên"
+        address: "Địa chỉ"
+        phone_number: "Số điện thoại"
+        description: "Giới thiệu về công ty"
+        gender: "Giới tính"
+        birthday: "Ngày sinh"
+      submit_text: "Cập nhật"
   partial:
     search_basic:
       intro: "Đây là cách dễ nhất để bạn tìm việc"
@@ -59,29 +76,56 @@ vi:
       filter: "Bộ lọc"
   accounts:
     new:
-      register: "Register"
-      intro: "Keep up to date with the latest news"
+      register: "Đăng kí"
+      intro: "Luôn cập nhật các thông tin mới nhất"
       home: "Home"
       pages: "Pages"
       sign_up: "Sign up"
     create:
-      success: "Your account has been created"
-      failure: "Create account fail"
-      invalid_role: "Invalid account role"
+      success: "Tài khoản của bạn đã được tạo"
+      failure: "Tạo tài khoản thất bại"
+      invalid_role: "role của tài khoản không thỏa mãn"
+  companies:
+    new:
+      necessary_info: "Cung cấp thông tin cần thiết"
+  users:
+    new:
+      necessary_info: "Cung cấp thông tin cần thiết"
   sessions:
     new:
-      login: "Log in"
-      intro: "Keep up to date with the latest news"
+      login: "Đăng nhập"
+      intro: "Luôn cập nhật các thông tin mới nhất"
       home: "Home"
       pages: "Pages"
     login:
-      success: "Log in successfully"
-      failure: "Log in fail"
+      success: "Đăng nhập thành công"
+      failure: "Đăng nhập thất bại"
+      not_found: "Không tìm thấy tài khoản"
   jobs:
-    not_found: "Job not found"
+    job:
+      applied: "Đã ứng tuyển!"
+      apply_job: "Ứng tuyển"
+    not_found: "Không tim thấy công việc tương ứng"
     create:
-      success: "Job has been created"
-      failure: "Create job fail"
+      success: "Công việc đã được tạo"
+      failure: "Tạo công việc thất bại"
     update:
-      success: "Job has been updated"
-      failure: "Update job fail"
+      success: "Công việc đã được cập nhật"
+      failure: "Cập nhật công việc thất bại"
+  user_apply_jobs:
+    form_apply:
+      name: "Tên:"
+      email: "Email:"
+      phone: "SĐT:"
+      gender: "Giới tính:"
+      birthday: "Ngày sinh:"
+      address: "Địa chỉ:"
+      objective: "Mục tiêu:"
+      work_experiences: "Kinh nghiệm làm việc:"
+      educations: "Bằng cấp:"
+      skills: "Kĩ năng:"
+      interests: "Sở thích:"
+      apply: "Ứng tuyển"
+    new:
+      check_your_info: "Kiểm tra thông tin của bạn"
+      will_affect_profile: "Thay đổi thông tin ở đây sẽ cập nhật thông tin của bạn"

@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  COMPANY_PARAMS = %i(name address phone_number description).freeze
+
   belongs_to :account
   has_many :jobs, dependent: :destroy
 

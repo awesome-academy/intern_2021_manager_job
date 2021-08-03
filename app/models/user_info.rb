@@ -1,4 +1,6 @@
 class UserInfo < ApplicationRecord
+  USER_INFO_PARAMS = %i(objective work_experiences
+                        educations skills interests).freeze
   belongs_to :user
 
   validates :user_id, presence: true

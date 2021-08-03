@@ -1,0 +1,135 @@
+<%= form_for @current_user, method: :post, url: user_apply_jobs_path do |f| %>
+  <%= hidden_field_tag :job_id, @job.id %>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="ava-profile">
+        <%= image_tag Settings.image.user_avatar %>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="row row-profile">
+        <div class="col-lg-5">
+          <div class="pf-title">
+            <%= t ".name" %>
+          </div>
+          <div class="pf-field">
+            <%= f.text_field :name %>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="pf-title">
+            <%= t ".email" %>
+          </div>
+          <div class="pf-field">
+            <%= text_field_tag :email, @current_account.email, :readonly => true %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-profile">
+        <div class="col-lg-4">
+          <div class="pf-title">
+            <%= t ".phone" %>
+          </div>
+          <div class="pf-field">
+            <%= f.text_field :phone_number %>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <span class="pf-title">
+            <%= t ".gender" %>
+          </span>
+          <div class="pf-field">
+            <%= f.select :gender, gender_options %>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="pf-title">
+            <%= t ".birthday" %>
+          </div>
+          <div class="pf-field">
+            <%= f.date_field :birthday %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-profile">
+        <div class="col-lg-11">
+          <div class="pf-title">
+            <%= t ".address" %>
+          </div>
+          <div class="pf-field">
+            <%= f.text_field :address %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-lg-11">
+      <div class="pf-title">
+        <%= t ".objective" %>
+      </div>
+      <div class="pf-field">
+        <%= f.fields_for :user_info do |ff| %>
+          <%= ff.text_field :objective %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-11">
+      <div class="pf-title">
+        <%= t ".work_experiences" %>
+      </div>
+      <div class="pf-field">
+        <%= f.fields_for :user_info do |ff| %>
+          <%= ff.text_field :work_experiences %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-11">
+      <div class="pf-title">
+        <%= t ".educations" %>
+      </div>
+      <div class="pf-field">
+        <%= f.fields_for :user_info do |ff| %>
+          <%= ff.text_field :educations %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-11">
+      <div class="pf-title">
+        <%= t ".skills" %>
+      </div>
+      <div class="pf-field">
+        <%= f.fields_for :user_info do |ff| %>
+          <%= ff.text_field :skills %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-11">
+      <div class="pf-title">
+        <%= t ".interests" %>
+      </div>
+      <div class="pf-field">
+        <%= f.fields_for :user_info do |ff| %>
+          <%= ff.text_field :interests %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <button type="submit">
+        <%= t ".apply" %>
+      </button>
+    </div>
+  </div>
+<% end %>

@@ -24,4 +24,12 @@ class Job < ApplicationRecord
             length: {minimum: Settings.jobs.benefit.length.min,
                      maximum: Settings.jobs.benefit.length.max}
   validates :status, :expire_at, presence: true
+
+  scope :recent_jobs, ->{order(created_at: :desc)}
+
+  class << self
+    def current_jobs
+      Job.all.recent_jobs
+    end
+  end
 end

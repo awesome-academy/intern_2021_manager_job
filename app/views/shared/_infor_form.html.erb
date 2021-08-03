@@ -1,0 +1,25 @@
+<%= form_for object do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="cfield">
+    <%= f.text_field :name, placeholder: t(".placeholder.name") %>
+  </div>
+  <div class="cfield">
+    <%= f.text_field :address, placeholder: t(".placeholder.address") %>
+  </div>
+  <div class="cfield">
+    <%= f.text_field :phone_number, placeholder: t(".placeholder.phone_number") %>
+  </div>
+  <% if current_account.company? %>
+    <div class="cfield">
+      <%= f.text_area :description, placeholder: t(".placeholder.description") %>
+    </div>
+  <% elsif current_account.user? %>
+    <div class="cfield">
+      <%= f.select :gender, gender_options %>
+    </div>
+    <div class="cfield">
+      <%= f.date_select :birthday, placeholder: t(".placeholder.birthday") %>
+    </div>
+  <% end %>
+  <%= f.submit t(".submit_text") %>
+<% end %>

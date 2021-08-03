@@ -1,0 +1,50 @@
+<div class="login">
+  <section>
+    <div class="block no-padding  gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="inner2">
+              <div class="inner-title2">
+                <h3><%= t ".login" %></h3>
+                <span><%= t ".intro" %></span>
+              </div>
+              <div class="page-breacrumbs">
+                <ul class="breadcrumbs">
+                  <li><%= link_to t(".home"), root_path %></li>
+                  <li><%= link_to t(".login"), login_path %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="block remove-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="account-popup-area signup-popup-box static">
+              <div class="account-popup">
+                <h3><%= t ".login" %></h3>
+                <%= render "shared/login_form", object: :session, url: login_path %>
+                <div class="extra-login">
+                  <div class="login-social">
+                    <%= link_to "#", class: "fb-login" do %>
+                      <i class="fa fa-facebook"></i>
+                    <% end %>
+                    <%= link_to "#", class: "tw-login" do %>
+                      <i class="fa fa-twitter"></i>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

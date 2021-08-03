@@ -1,3 +1,7 @@
 class StaticPagesController < ApplicationController
-  def home; end
+  before_action :current_account
+
+  def home
+    @jobs = Job.current_jobs
+  end
 end
