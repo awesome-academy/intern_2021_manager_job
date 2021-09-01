@@ -304,12 +304,12 @@ en:
       subject_email: "Account activation"
       password_reset: "Password reset"
   account_mailer:
-    account_activation:
+    confirmation_instructions:
       app_name: "ITViec"
       greeting: "Hi guy,"
       intro: "Welcome to the ITViec! Click on the link below to activate your account:"
-      active: "Active"
-    password_reset:
+      activate: "Active"
+    reset_password_instructions:
       intro: "To reset your password click the link below:"
       expire: "This link will expire in two hours."
       ignore: "If you did not request your password to be reset, please ignore

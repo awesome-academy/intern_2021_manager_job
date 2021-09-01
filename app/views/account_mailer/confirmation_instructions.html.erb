@@ -1,0 +1,6 @@
+<h1><%= t ".app_name" %></h1>
+
+<p><%= t ".greeting" %></p>
+<p><%= t ".intro" %></p>
+
+<%= link_to t(".activate"), confirmation_url(@resource, comfirmation_token: @token) %>

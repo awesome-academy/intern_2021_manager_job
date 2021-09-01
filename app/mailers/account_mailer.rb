@@ -1,11 +1,12 @@
-class AccountMailer < ApplicationMailer
-  def account_activation account
-    @account = account
-    mail to: account.email, subject: t("mailers.account_mailer.subject_email")
+class AccountMailer < Devise::Mailer
+  include Devise::Controllers::UrlHelpers
+  default template_path: "account_mailer"
+
+  def reset_password_instructions record, token, opts = {}
+    super
   end
 
-  def password_reset account
-    @account = account
-    mail to: account.email, subject: t("mailers.account_mailer.password_reset")
+  def confirmation_instructions record, token, opts = {}
+    super
   end
 end

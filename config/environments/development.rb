@@ -39,6 +39,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = {host: ENV["host"]}
   config.action_mailer.smtp_settings = {
+    from: ENV["host_email"],
     user_name: ENV["mail_user_name"],
     password: ENV["mail_user_password"],
     address: ENV["mail_address"],
