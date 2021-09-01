@@ -5,14 +5,16 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/sidekiq"
     root "static_pages#home"
 
-    devise_for :accounts, controllers: {sessions: "sessions", registrations: "accounts"}
+    devise_for :accounts, controllers: {sessions: "sessions",
+                                        registrations: "accounts",
+                                        passwords: "password_resets",
+                                        confirmations: "account_activations"}
 
 
     resources :users, except: %i(index destroy)
     resources :companies, except: %i(index destroy)
     resources :user_apply_jobs, only: %i(new create)
     resources :account_activations, only: :edit
-    resources :password_resets, except: %i(show index destroy)
     delete "/admin_logout", to: "admin_sessions#destroy"
 
     resources :admin, only: :index

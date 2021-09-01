@@ -304,12 +304,12 @@ vi:
       subject_email: "Xác thực tài khoản"
       password_reset: "Lấy lại mật khẩu"
   account_mailer:
-    account_activation:
+    confirmation_instructions:
       app_name: "ITViec"
       greeting: "Chào bạn,"
       intro: "Chào mừng bạn đến với ITViec! Chọn vào đường dẫn ở dưới để xác thực tài khoản:"
-      active: "Kích hoạt"
-    password_reset:
+      activate: "Kích hoạt"
+    reset_password_instructions:
       intro: "Để đổi mật khẩu, nhấn vào đường dẫn bên dưới:"
       expire: "Đường dẫn sẽ hết hạn trong hai tiếng"
       ignore: "Nếu bạn không yêu cầu thay đổi mật khẩu, vui lòng bỏ qua email

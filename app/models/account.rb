@@ -1,9 +1,9 @@
 class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
   attr_accessor :activation_token, :reset_token
   before_save :downcase_email
-  before_create :create_activation_digest, :set_default_avatar
+  before_create :set_default_avatar
 
   ACCOUNT_PARAMS = %i(email password password_confirmation role).freeze
   PASSWORD_PARAMS = %i(password password_confirmation).freeze
@@ -49,12 +49,6 @@ class Account < ApplicationRecord
 
   def send_activation_email
     AccountMailer.account_activation(self).deliver_later
-  end
-
-  def create_reset_digest
-    self.reset_token = Account.new_token
-    update reset_digest: Account.digest(reset_token),
-           reset_sent_at: Time.zone.now
   end
 
   def send_password_reset_email
