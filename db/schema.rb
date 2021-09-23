@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_154536) do
+ActiveRecord::Schema.define(version: 2021_09_20_065642) do
 
   create_table "accounts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email"
@@ -111,6 +111,14 @@ ActiveRecord::Schema.define(version: 2021_09_09_154536) do
     t.integer "status", default: 0
   end
 
+  create_table "reason_to_joins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "job_id", null: false
+    t.string "reason_content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_reason_to_joins_on_job_id"
+  end
+
   create_table "salaries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "min_salary"
     t.bigint "max_salary"
@@ -158,6 +166,7 @@ ActiveRecord::Schema.define(version: 2021_09_09_154536) do
   add_foreign_key "job_categories", "categories"
   add_foreign_key "job_categories", "jobs"
   add_foreign_key "jobs", "companies"
+  add_foreign_key "reason_to_joins", "jobs"
   add_foreign_key "user_apply_jobs", "jobs"
   add_foreign_key "user_apply_jobs", "users"
   add_foreign_key "user_infos", "users"

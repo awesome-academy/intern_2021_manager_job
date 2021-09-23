@@ -377,3 +377,10 @@ vi:
     apply: "%{name} ứng tuyển vào 1 job của bạn."
     accepted: "%{name} đã chấp nhận đơn ứng tuyển của bạn."
     denied: "%{name} đã từ chối đơn ứng tuyển của bạn."
+  cocoon:
+    defaults:
+      add: "Thêm bản ghi"
+      remove: "Xóa bản ghi"
+    reason_to_joins:
+      add: "Thêm mới lý do"
+      remove: "Xóa lý do cũ"

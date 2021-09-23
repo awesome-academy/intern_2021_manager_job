@@ -1,6 +1,9 @@
 class Job < ApplicationRecord
-  JOB_PARAMS = %i(name quantity salary description
-                  requirement benefit status expire_at).freeze
+  ONLY_JOB_PARAMS = %i(name quantity salary description
+                      requirement benefit status expire_at).freeze
+  REASON_PARAMS = %i(id reason_content _destroy).freeze
+  JOB_PARAMS = [ONLY_JOB_PARAMS,
+                reason_to_joins_attributes: REASON_PARAMS].freeze
 
   SORT_PARAMS = ["name asc", "expire_at desc"].freeze
 
@@ -11,6 +14,7 @@ class Job < ApplicationRecord
   has_many :categories, through: :job_categories
   has_many :send_notifications, class_name: Notification.name,
                   foreign_key: :sender_id, dependent: :destroy
+  has_many :reason_to_joins, dependent: :destroy
 
   validates :company_id, presence: true
   validates :name, presence: true,
@@ -28,6 +32,8 @@ class Job < ApplicationRecord
             length: {minimum: Settings.jobs.benefit.length.min,
                      maximum: Settings.jobs.benefit.length.max}
   validates :status, :expire_at, presence: true
+
+  accepts_nested_attributes_for :reason_to_joins, allow_destroy: true
 
   ransack_alias :name, :name_or_company_name
 

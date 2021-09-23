@@ -1,4 +1,5 @@
 <%= form_for object do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
   <div class="row">
     <div class="col-lg-12">
       <span class="pf-title"><%= t ".name" %></span>
@@ -33,12 +34,6 @@
       </div>
     </div>
     <div class="col-lg-12">
-      <span class="pf-title"><%= t ".categories" %></span>
-      <div class="pf-field">
-        <%= render "jobs/job_categories", collection: @categories, field: "job[job_categories]", form: f %>
-      </div>
-    </div>
-    <div class="col-lg-12">
       <span class="pf-title"><%= t ".requirement" %></span>
       <span class="required-field"></span>
       <div class="pf-field">
@@ -50,6 +45,15 @@
       <span class="required-field"></span>
       <div class="pf-field">
         <%= f.text_area :benefit %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <%= f.fields_for :reason_to_joins do |reason| %>
+        <%= render "reason_to_join_fields", f: reason %>
+      <% end %>
+
+      <div>
+        <%= link_to_add_association f, :reason_to_joins %>
       </div>
     </div>
     <div class="col-lg-12">

@@ -104,6 +104,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     chronic (0.10.2)
+    cocoon (1.2.15)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
     config (3.1.0)
@@ -448,6 +449,7 @@ DEPENDENCIES
   bullet
   cancancan
   capybara (>= 3.26)
+  cocoon
   config
   database_cleaner
   devise

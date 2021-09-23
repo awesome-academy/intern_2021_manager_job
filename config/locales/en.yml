@@ -198,6 +198,8 @@ en:
       view: "View"
       detail: "View Detail"
     not_found: "Job not found"
+    reason_to_join_fields:
+      reason_to_join: "Reason to join us"
     index:
       job_count: "%{num} Jobs & Vacancies"
       from: "Created from"
@@ -377,3 +379,10 @@ en:
     apply: "%{name} has applied for a job."
     accepted: "%{name} has accepted you for a job."
     denied: "%{name} has denied you for a job."
+  cocoon:
+    defaults:
+      add: "Add record"
+      remove: "Remove record"
+    reason_to_joins:
+      add: "Add new reason"
+      remove: "Remove old reason"
